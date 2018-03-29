@@ -1,0 +1,72 @@
+.App {
+  background: #bbbbbb;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 700px;
+  height: 600px;
+  background: #e4e4e4;
+  border-radius: 10px;
+  padding: 10px;
+  position: relative;
+}
+
+.item {
+  height: 70px;
+  width: 100px;
+  background: #555555;
+  position: absolute;
+  color: #fff;
+  display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.top-left {
+  top: 0px;
+  left: 0px;
+}
+
+.top-centre {
+  top: 0px;
+  left: calc(50% - 50px);
+}
+
+.top-right {
+  top: 0px;
+  right: 0px;
+}
+
+.left {
+  top: calc(50% - 35px);
+  left: 0px;
+}
+
+.centre {
+  top: calc(50% - 35px);
+  left: calc(50% - 50px);
+}
+
+.right {
+  top: calc(50% - 35px);
+  right: 0px;
+}
+
+.bottom-left {
+  bottom: 0px;
+  left: 0px;
+}
+
+.bottom-centre {
+  bottom: 0px;
+  left: calc(50% - 50px);
+}
+
+.bottom-right {
+  bottom: 0px;
+  right: 0px;
+}
