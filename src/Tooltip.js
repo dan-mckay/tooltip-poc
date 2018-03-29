@@ -1,11 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const Portal = props => {
-  return ReactDOM.createPortal(
-    props.children,
-    window.document.body
-  );
+const modalRoot = document.getElementById('modalRoot');
+
+class Portal extends React.Component {
+  constructor(props) {
+    super(props);
+    this.$el = document.createElement('div');
+
+    this.state = {
+      height: 0
+    }
+  }
+
+  componentDidMount() {
+    modalRoot.appendChild(this.$el);
+    console.log(this.$el.offsetHeight)
+  }
+
+  render() {
+    return ReactDOM.createPortal(
+      this.props.children,
+      this.$el
+    )
+  }
 }
 
 class Tooltip extends React.Component {
@@ -25,7 +43,8 @@ class Position extends React.Component {
 
     this.state = { 
       coords: {
-        x: 0, y: 0 
+        x: 0, 
+        y: 0 
       }
     }
   }
@@ -34,19 +53,13 @@ class Position extends React.Component {
     this.setPosition()
   }
 
-  componentWillReceiveProps(next) {
-    console.log(this.props)
-    if (!this.props.children && next.children) {
-      console.log('>>>', this.props.children)
-    }
-  }
-
   setPosition() {
-    const random = getRandomIntInclusive(2, 10)
+    const {bottom, height, left, right, top, width, x, y} = this.props.$target.getBoundingClientRect()
+
     this.setState({
       coords: {
-        x: Math.floor(window.innerWidth / random),
-        y: Math.floor(window.innerHeight / random)
+        x: x + width,
+        y: y + height
       }
     })
   }
@@ -60,18 +73,12 @@ class Position extends React.Component {
   }
 }
 
-export default class PositionTooltip extends React.Component {
-  render() {
-    return (
-      <Position $node={this.props.$node} render={coords => (
-        <Tooltip coords={coords} />
-      )}/>
-    )
-  }
+const PositionTooltip = props => {
+  return (
+    <Position $target={props.$node} render={coords => (
+      <Tooltip coords={coords} />
+    )}/>
+  )
 }
 
-function getRandomIntInclusive(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive 
-}
+export default PositionTooltip

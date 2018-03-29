@@ -13,15 +13,12 @@ class Grid extends Component {
   }
 
   hideTip = e => {
-    console.log('hide', e.target)
-    e.preventDefault
     this.setState({
       $node: null
     })
   }
 
   showTip = e => {
-    console.log('show', e.target)
     e.stopPropagation()
     this.setState({
       $node: e.target
