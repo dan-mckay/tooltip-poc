@@ -21,6 +21,7 @@ class Grid extends Component {
 
   showTip = e => {
     e.stopPropagation()
+    console.log(e)
     this.setState({
       $node: e.target
     })
