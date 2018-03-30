@@ -18,12 +18,12 @@
 .item {
   height: 70px;
   width: 100px;
-  background: #555555;
+  background: #008a50;
   position: absolute;
   color: #fff;
   display: flex;
-    align-items: center;
-    justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .top-left {

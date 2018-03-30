@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Tooltip from './Tooltip.js'
+import {rootNode} from './index.js'
 import './App.css'
 
 class Grid extends Component {
@@ -9,7 +10,7 @@ class Grid extends Component {
   }
 
   componentDidMount() {
-    window.addEventListener('mousedown', this.hideTip, false);
+    rootNode.addEventListener('mousedown', this.hideTip, false);
   }
 
   hideTip = e => {
