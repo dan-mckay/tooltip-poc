@@ -1,6 +1,8 @@
 import React from 'react'
 import Portal from './Portal.js'
-import {ABOVE, BELOW, LEFT, RIGHT} from './constants.js'
+import {TOP, BOTTOM, LEFT, RIGHT} from './constants.js'
+
+const DEFAULT_MARGIN = 20
 
 export default class Position extends React.Component {
   state = { 
@@ -17,17 +19,23 @@ export default class Position extends React.Component {
     this.setPosition()
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.position !== this.props.position) {
+      this.setPosition()
+    }
+  }
+
   setPosition() {
     switch (this.props.position) {
-      case ABOVE:
-        return this.setAbove()
+      case TOP:
+        return this.setTop()
       case RIGHT:
         return this.setRight()
       case LEFT:
         return this.setLeft()
-      case BELOW:
+      case BOTTOM:
       default:
-        return this.setBelow()
+        return this.setBottom()
     }
   }
 
@@ -44,27 +52,36 @@ export default class Position extends React.Component {
     const {bottom, height, left, right, top, width, x, y} = this.props.$target.getBoundingClientRect()
   }
 
-  setAbove() {
-    // TODO implementation
+  setTop() {
+    const {top, width, left} = this.props.$target.getBoundingClientRect()
+    const xPos = left + (width / 2 - this.tipWidth / 2)
+    const yPos = top - this.tipHeight - DEFAULT_MARGIN
+
+    this.setCoords(xPos, yPos)
   }
 
-  setBelow() {
+  setBottom() {
     const {bottom, width, left} = this.props.$target.getBoundingClientRect()
     const xPos = left + (width / 2 - this.tipWidth / 2)
-    const yPos = bottom
-
-    console.log(this.props.$target)
-    console.log(this.props.$target.getBoundingClientRect())
+    const yPos = bottom + DEFAULT_MARGIN
 
     this.setCoords(xPos, yPos)
   }
 
   setLeft() {
-    // TODO implementation
+    const {bottom, height, left} = this.props.$target.getBoundingClientRect()
+    const xPos = left - this.tipWidth - DEFAULT_MARGIN
+    const yPos = bottom - (height / 2) - (this.tipHeight / 2)
+
+    this.setCoords(xPos, yPos)
   }
 
   setRight() {
-    // TODO implementation
+    const {bottom, height, right} = this.props.$target.getBoundingClientRect()
+    const xPos = right + DEFAULT_MARGIN
+    const yPos = bottom - (height / 2) - (this.tipHeight / 2)
+
+    this.setCoords(xPos, yPos)
   }
 
   render() {

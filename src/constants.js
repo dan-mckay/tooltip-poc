@@ -1,6 +1,6 @@
-export const ABOVE = 'above'
-export const BELOW = 'below'
+export const TOP = 'top'
+export const BOTTOM = 'bottom'
 export const RIGHT = 'right'
 export const LEFT = 'left'
 
-export const POSITIONS = [ABOVE, BELOW, RIGHT, LEFT]
+export const POSITIONS = [TOP, BOTTOM, RIGHT, LEFT]
