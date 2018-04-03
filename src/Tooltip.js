@@ -33,7 +33,7 @@ const PositionTooltip = props => {
 export default PositionTooltip
 
 PositionTooltip.propTypes = {
-  $target: PropTypes.node.isRequired,
+  $target: PropTypes.instanceOf(Element).isRequired,
   render: PropTypes.func.isRequired,
   position: PropTypes.oneOf(POSITIONS),
   // TODO - don't limit to string could be component etc.

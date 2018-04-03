@@ -44,15 +44,15 @@
 	margin-left: -11px;
 }
 .arrowleft:after {
-  left: 100%;
+  right: 100%;
   top: 50%;
 	border-color: rgba(136, 183, 213, 0);
-	border-left-color: #616161;
+	border-right-color: #616161;
 	border-width: 5px;
 	margin-top: -5px;
 }
 .arrowleft:before {
-  left: 100%;
+  right: 100%;
   top: 50%;
 	border-color: rgba(0, 0, 0, 0);
 	border-width: 11px;
@@ -62,7 +62,7 @@
   left: 100%;
   top: 50%;
 	border-color: rgba(136, 183, 213, 0);
-	border-right-color: #616161;
+	border-left-color: #616161;
 	border-width: 5px;
 	margin-top: -5px;
 }

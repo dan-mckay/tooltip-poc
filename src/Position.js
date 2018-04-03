@@ -48,10 +48,6 @@ export default class Position extends React.Component {
     })
   }
 
-  getMeasurements() {
-    const {bottom, height, left, right, top, width, x, y} = this.props.$target.getBoundingClientRect()
-  }
-
   setTop() {
     const {top, width, left} = this.props.$target.getBoundingClientRect()
     const xPos = left + (width / 2 - this.tipWidth / 2)
