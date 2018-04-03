@@ -4,11 +4,18 @@ import Position from './Position.js'
 import { TOP, BOTTOM, RIGHT, LEFT, POSITIONS } from './constants.js'
 import './Tooltip.css'
 
+const arrowStyle = {
+  [TOP]: 'arrowdown',
+  [BOTTOM]: 'arrowup',
+  [LEFT]: 'arrowright',
+  [RIGHT]: 'arrowleft'
+}
+
 // Presentation component
 const Tooltip = props => {
   const coords = props.coords
   return (
-    <div className='tooltip' style={{ position: 'absolute', left: coords.x, top: coords.y }}>
+    <div className={`tooltip ${arrowStyle[props.position]}`} style={{ position: 'absolute', left: coords.x, top: coords.y }}>
       {props.text}
     </div>
   )
@@ -18,7 +25,7 @@ const Tooltip = props => {
 const PositionTooltip = props => {
   return (
     <Position position={props.position} $target={props.$target} render={coords => (
-      <Tooltip text={props.text} coords={coords} />
+      <Tooltip position={props.position} text={props.text} coords={coords} />
     )}/>
   )
 }
