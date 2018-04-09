@@ -1,5 +1,6 @@
 import React from 'react'
 import Portal from './Portal.js'
+import { debounce } from './utils.js'
 import {TOP, BOTTOM, LEFT, RIGHT} from './constants.js'
 
 const DEFAULT_MARGIN = 20
@@ -13,6 +14,7 @@ export default class Position extends React.Component {
   }
 
   componentDidMount() {
+    window.addEventListener('resize', debounce(this.setPosition), 250)
     this.$tooltip = this.$element.$el.firstChild
     this.tipHeight = this.$tooltip.offsetHeight
     this.tipWidth = this.$tooltip.offsetWidth
@@ -25,7 +27,11 @@ export default class Position extends React.Component {
     }
   }
 
-  setPosition() {
+  componentWillUnmount() {
+    window.removeEventListener('resize', debounce(this.setPosition))
+  }
+
+  setPosition = () => {
     switch (this.props.position) {
       case TOP:
         return this.setTop()
