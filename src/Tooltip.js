@@ -11,12 +11,15 @@ const arrowStyle = {
   [RIGHT]: 'arrowleft'
 }
 
+const SPACE = ' ' // used as contents for arrow span
+
 // Presentation component
 const Tooltip = props => {
   const coords = props.coords
   return (
-    <div className={`tooltip ${arrowStyle[props.position]}`} style={{ position: 'absolute', left: coords.x, top: coords.y }}>
+    <div className={'tooltip'} style={{ left: coords.x, top: coords.y }}>
       {props.text}
+      <div className={`tooltip-arrow ${arrowStyle[props.position]}`}>{SPACE}</div>
     </div>
   )
 }

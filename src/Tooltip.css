@@ -1,75 +1,43 @@
 .tooltip {
+	position: absolute;
   padding: 8px;
   background: #616161;
   opacity: 0.5;
   font-size: 11px;
-  color: #fff;
+	color: #fff;
+	z-index: 1000000;
 }
-.tooltip:after, .tooltip:before {
+.tooltip-arrow {
 	border: solid transparent;
-	content: " ";
 	height: 0;
 	width: 0;
 	position: absolute;
 	pointer-events: none;
+	z-index: 1000001;
+	border-color: transparent;
+	border-width: 5px;
 }
-.arrowup:after {
+.arrowup {
   bottom: 100%;
-  left: 50%;
-	border-color: rgba(136, 183, 213, 0);
+	left: 50%;
+	margin-left: -5px;
 	border-bottom-color: #616161;
-	border-width: 5px;
-	margin-left: -5px;
 }
-.arrowup:before {
-  bottom: 100%;
-  left: 50%;
-	border-color: rgba(0, 0, 0, 0);
-	border-width: 11px;
-	margin-left: -11px;
-}
-.arrowdown:after {
+.arrowdown {
   top: 100%;
-  left: 50%;
-	border-color: rgba(136, 183, 213, 0);
+	left: 50%;
+	margin-left: -5px;
 	border-top-color: #616161;
-	border-width: 5px;
-	margin-left: -5px;
 }
-.arrowdown:before {
-  top: 100%;
-  left: 50%;
-	border-color: rgba(0, 0, 0, 0);
-	border-width: 11px;
-	margin-left: -11px;
-}
-.arrowleft:after {
+.arrowleft {
   right: 100%;
-  top: 50%;
-	border-color: rgba(136, 183, 213, 0);
+	top: 50%;
+	margin-top: -5px;
 	border-right-color: #616161;
-	border-width: 5px;
-	margin-top: -5px;
 }
-.arrowleft:before {
-  right: 100%;
-  top: 50%;
-	border-color: rgba(0, 0, 0, 0);
-	border-width: 11px;
-	margin-top: -11px;
-}
-.arrowright:after {
+.arrowright {
   left: 100%;
-  top: 50%;
-	border-color: rgba(136, 183, 213, 0);
+	top: 50%;
+	margin-top: -5px;
 	border-left-color: #616161;
-	border-width: 5px;
-	margin-top: -5px;
-}
-.arrowright:before {
-  left: 100%;
-  top: 50%;
-	border-color: rgba(0, 0, 0, 0);
-	border-width: 11px;
-	margin-top: -11px;
 }
