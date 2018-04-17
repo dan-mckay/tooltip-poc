@@ -1,0 +1,87 @@
+.tooltip {
+	position: absolute;
+	background: white;
+  border: 2px solid red;
+  padding: 10px;
+  z-index: 1000000;
+}
+.tooltip-arrow, 
+.tooltip-arrow-border{
+	border: solid transparent;
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+/* ARROW UP */
+.tooltip-arrow.arrowup,
+.tooltip-arrow-border.arrowup {
+  bottom: 100%;
+	left: 50%;
+}
+
+.tooltip-arrow.arrowup {
+	border-bottom-color:white;
+	border-width: 12px;
+	margin-left: -12px;
+}
+.tooltip-arrow-border.arrowup {
+	border-bottom-color: red;
+	border-width: 15px;
+	margin-left: -15px;
+}
+
+/* ARROW DOWN */
+.tooltip-arrow.arrowdown,
+.tooltip-arrow-border.arrowdown {
+	top: 100%;
+	left: 50%;
+}
+
+.tooltip-arrow.arrowdown {
+	border-top-color: white;
+	border-width: 12px;
+	margin-left: -12px;
+}
+.tooltip-arrow-border.arrowdown {
+	border-top-color: red;
+	border-width: 15px;
+	margin-left: -15px;
+}
+
+/* ARROW RIGHT */
+.tooltip-arrow.arrowright,
+.tooltip-arrow-border.arrowright {
+	left: 100%;
+	top: 50%;
+}
+
+.tooltip-arrow.arrowright {
+	border-left-color: white;
+	border-width: 12px;
+	margin-top: -12px;
+}
+.tooltip-arrow-border.arrowright {
+	border-left-color: red;
+	border-width: 15px;
+	margin-top: -15px;
+}
+
+/* ARROW LEFT */
+.tooltip-arrow.arrowleft,
+.tooltip-arrow-border.arrowleft {
+	right: 100%;
+	top: 50%;
+}
+
+.tooltip-arrow.arrowleft {
+	border-right-color: white;
+	border-width: 12px;
+	margin-top: -12px;
+}
+.tooltip-arrow-border.arrowleft {
+	border-right-color: red;
+	border-width: 15px;
+	margin-top: -15px;
+}

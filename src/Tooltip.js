@@ -2,7 +2,7 @@ import React from 'react'
 import { PropTypes } from 'prop-types'
 import Position from './Position.js'
 import { TOP, BOTTOM, RIGHT, LEFT, POSITIONS } from './constants.js'
-import './Tooltip.css'
+import './Tooltip2.css'
 
 const arrowStyle = {
   [TOP]: 'arrowdown',
@@ -11,15 +11,24 @@ const arrowStyle = {
   [RIGHT]: 'arrowleft'
 }
 
-const SPACE = ' ' // used as contents for arrow span
-
 // Presentation component
 const Tooltip = props => {
   const coords = props.coords
   return (
     <div className={'tooltip'} style={{ left: coords.x, top: coords.y }}>
-      {props.text}
-      <div className={`tooltip-arrow ${arrowStyle[props.position]}`}>{SPACE}</div>
+      <TooltipArrow position={props.position}>
+        {props.text}
+      </TooltipArrow>
+    </div>
+  )
+}
+
+const TooltipArrow = props => {
+  return (
+    <div>
+      <div className={`tooltip-arrow-border ${arrowStyle[props.position]}`} />
+        {props.children}
+      <div className={`tooltip-arrow ${arrowStyle[props.position]}`} />
     </div>
   )
 }
