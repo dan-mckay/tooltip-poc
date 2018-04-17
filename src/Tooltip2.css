@@ -14,22 +14,51 @@
 	pointer-events: none;
 }
 
+/* ALL SHARED */
+.tooltip-arrow.arrowup,
+.tooltip-arrow.arrowdown,
+.tooltip-arrow.arrowright,
+.tooltip-arrow.arrowleft {
+	border-width: 12px;
+}
+.tooltip-arrow-border.arrowup,
+.tooltip-arrow-border.arrowdown,
+.tooltip-arrow-border.arrowright,
+.tooltip-arrow-border.arrowleft {
+	border-width: 15px;
+}
+
+/* ARROW UP & DOWN SHARED */
+.tooltip-arrow.arrowup,
+.tooltip-arrow.arrowdown {
+	margin-left: -12px;
+}
+.tooltip-arrow-border.arrowup,
+.tooltip-arrow-border.arrowdown {
+	margin-left: -15px;
+}
+
+/* ARROW RIGHT & LEFT SHARED */
+.tooltip-arrow.arrowright,
+.tooltip-arrow.arrowleft {
+	margin-top: -12px;
+}
+.tooltip-arrow-border.arrowright,
+.tooltip-arrow-border.arrowleft {
+	margin-top: -15px;
+}
+
 /* ARROW UP */
 .tooltip-arrow.arrowup,
 .tooltip-arrow-border.arrowup {
   bottom: 100%;
 	left: 50%;
 }
-
 .tooltip-arrow.arrowup {
-	border-bottom-color:white;
-	border-width: 12px;
-	margin-left: -12px;
+  border-bottom-color:white;
 }
 .tooltip-arrow-border.arrowup {
-	border-bottom-color: red;
-	border-width: 15px;
-	margin-left: -15px;
+  border-bottom-color: red;
 }
 
 /* ARROW DOWN */
@@ -38,16 +67,11 @@
 	top: 100%;
 	left: 50%;
 }
-
 .tooltip-arrow.arrowdown {
-	border-top-color: white;
-	border-width: 12px;
-	margin-left: -12px;
+  border-top-color: white;
 }
 .tooltip-arrow-border.arrowdown {
-	border-top-color: red;
-	border-width: 15px;
-	margin-left: -15px;
+  border-top-color: red;
 }
 
 /* ARROW RIGHT */
@@ -56,16 +80,11 @@
 	left: 100%;
 	top: 50%;
 }
-
 .tooltip-arrow.arrowright {
-	border-left-color: white;
-	border-width: 12px;
-	margin-top: -12px;
+  border-left-color: white;
 }
 .tooltip-arrow-border.arrowright {
-	border-left-color: red;
-	border-width: 15px;
-	margin-top: -15px;
+  border-left-color: red;
 }
 
 /* ARROW LEFT */
@@ -74,14 +93,9 @@
 	right: 100%;
 	top: 50%;
 }
-
 .tooltip-arrow.arrowleft {
 	border-right-color: white;
-	border-width: 12px;
-	margin-top: -12px;
 }
 .tooltip-arrow-border.arrowleft {
 	border-right-color: red;
-	border-width: 15px;
-	margin-top: -15px;
 }
