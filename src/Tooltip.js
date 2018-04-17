@@ -1,19 +1,20 @@
 import React from 'react'
 import { PropTypes } from 'prop-types'
 import Position from './Position.js'
-import { TOP, BOTTOM, RIGHT, LEFT, POSITIONS } from './constants.js'
+import * as positions from './constants.js'
 import './Tooltip2.css'
 
 const arrowStyle = {
-  [TOP]: 'arrowdown',
-  [BOTTOM]: 'arrowup',
-  [LEFT]: 'arrowright',
-  [RIGHT]: 'arrowleft'
+  [positions.TOP]: 'arrowdown',
+  [positions.BOTTOM]: 'arrowup',
+  [positions.LEFT]: 'arrowright',
+  [positions.RIGHT]: 'arrowleft'
 }
 
 // Presentation component
 const Tooltip = props => {
   const coords = props.coords
+
   return (
     <div className={'tooltip'} style={{ width: props.width, left: coords.x, top: coords.y }}>
       <TooltipArrow position={props.position}>
@@ -37,7 +38,7 @@ const TooltipArrow = props => {
 const PositionTooltip = props => {
   return (
     <Position position={props.position} $target={props.$target} width={props.width} render={coords => (
-      <Tooltip position={props.position} text={props.text} coords={coords} />
+      <Tooltip position={props.position} width={props.width} text={props.text} coords={coords} />
     )}/>
   )
 }
@@ -47,13 +48,13 @@ export default PositionTooltip
 PositionTooltip.propTypes = {
   $target: PropTypes.instanceOf(Element).isRequired,
   render: PropTypes.func.isRequired,
-  position: PropTypes.oneOf(POSITIONS),
+  position: PropTypes.oneOf(positions),
   // TODO - don't limit to string could be component etc.
   text: PropTypes.string
 }
 
 PositionTooltip.defaultProps = {
-  position: BOTTOM,
+  position: positions.BOTTOM,
   text: 'this is a tooltip with quite a bit of text in it, what do you think about that, eh?',
-  width: 50
+  width: 100
 }

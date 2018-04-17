@@ -4,7 +4,6 @@
   border: 2px solid red;
   padding: 10px;
   z-index: 1000000;
-  width: 100px;
 }
 .tooltip-arrow, 
 .tooltip-arrow-border{
