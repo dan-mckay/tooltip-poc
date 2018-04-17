@@ -15,7 +15,7 @@ const arrowStyle = {
 const Tooltip = props => {
   const coords = props.coords
   return (
-    <div className={'tooltip'} style={{ left: coords.x, top: coords.y }}>
+    <div className={'tooltip'} style={{ width: props.width, left: coords.x, top: coords.y }}>
       <TooltipArrow position={props.position}>
         {props.text}
       </TooltipArrow>
@@ -36,7 +36,7 @@ const TooltipArrow = props => {
 // Export presentation component wrapped with position component
 const PositionTooltip = props => {
   return (
-    <Position position={props.position} $target={props.$target} render={coords => (
+    <Position position={props.position} $target={props.$target} width={props.width} render={coords => (
       <Tooltip position={props.position} text={props.text} coords={coords} />
     )}/>
   )
@@ -54,5 +54,6 @@ PositionTooltip.propTypes = {
 
 PositionTooltip.defaultProps = {
   position: BOTTOM,
-  text: 'this is a tooltip'
+  text: 'this is a tooltip with quite a bit of text in it, what do you think about that, eh?',
+  width: 50
 }
