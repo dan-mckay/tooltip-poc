@@ -1,7 +1,20 @@
 import React from 'react'
 import Portal from './Portal.js'
 import { debounce } from './utils.js'
-import * as positions from './constants.js'
+import { 
+  TOP_LEFT,
+  TOP,
+  TOP_RIGHT,
+  BOTTOM_LEFT,
+  BOTTOM,
+  BOTTOM_RIGHT,
+  LEFT_TOP,
+  LEFT,
+  LEFT_BOTTOM,
+  RIGHT_TOP,
+  RIGHT,
+  RIGHT_BOTTOM 
+} from './constants.js'
 
 const DEFAULT_MARGIN = 20
 
@@ -33,29 +46,29 @@ export default class Position extends React.Component {
 
   setPosition = () => {
     switch (this.props.position) {
-      case positions.TOP:
+      case TOP:
         return this.setTop()
-      case positions.RIGHT:
+      case RIGHT:
         return this.setRight()
-      case positions.LEFT:
+      case LEFT:
         return this.setLeft()
-      case positions.TOP_LEFT:
+      case TOP_LEFT:
         return this.setTopLeft()
-      case positions.TOP_RIGHT:
+      case TOP_RIGHT:
         return this.setTopRight()
-      case positions.BOTTOM_LEFT:
+      case BOTTOM_LEFT:
         return this.setBottomLeft()
-      case positions.BOTTOM_RIGHT:
+      case BOTTOM_RIGHT:
         return this.setBottomRight()
-      case positions.LEFT_TOP:
+      case LEFT_TOP:
         return this.setLeftTop()
-      case positions.LEFT_BOTTOM:
+      case LEFT_BOTTOM:
         return this.setLeftBottom()
-      case positions.RIGHT_TOP:
+      case RIGHT_TOP:
         return this.setRightTop()
-      case positions.RIGHT_BOTTOM:
+      case RIGHT_BOTTOM:
         return this.setRightBottom()
-      case positions.BOTTOM:
+      case BOTTOM:
       default:
         return this.setBottom()
     }

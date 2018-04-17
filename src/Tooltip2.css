@@ -15,87 +15,135 @@
 }
 
 /* ALL SHARED */
-.tooltip-arrow.arrowup,
-.tooltip-arrow.arrowdown,
-.tooltip-arrow.arrowright,
-.tooltip-arrow.arrowleft {
+.tooltip-arrow {
 	border-width: 12px;
 }
-.tooltip-arrow-border.arrowup,
-.tooltip-arrow-border.arrowdown,
-.tooltip-arrow-border.arrowright,
-.tooltip-arrow-border.arrowleft {
+.tooltip-arrow-border {
 	border-width: 15px;
 }
 
 /* ARROW UP & DOWN SHARED */
-.tooltip-arrow.arrowup,
-.tooltip-arrow.arrowdown {
+.tooltip-arrow.arrow-up,
+.tooltip-arrow.arrow-up-left,
+.tooltip-arrow.arrow-up-right,
+.tooltip-arrow.arrow-down,
+.tooltip-arrow.arrow-down-left,
+.tooltip-arrow.arrow-down-right {
 	margin-left: -12px;
 }
-.tooltip-arrow-border.arrowup,
-.tooltip-arrow-border.arrowdown {
+.tooltip-arrow-border.arrow-up,
+.tooltip-arrow-border.arrow-up-left,
+.tooltip-arrow-border.arrow-up-right,
+.tooltip-arrow-border.arrow-down,
+.tooltip-arrow-border.arrow-down-left,
+.tooltip-arrow-border.arrow-down-right {
 	margin-left: -15px;
 }
 
 /* ARROW RIGHT & LEFT SHARED */
-.tooltip-arrow.arrowright,
-.tooltip-arrow.arrowleft {
+.tooltip-arrow.arrow-right,
+.tooltip-arrow.arrow-right-top,
+.tooltip-arrow.arrow-right-bottom,
+.tooltip-arrow.arrow-left,
+.tooltip-arrow.arrow-left-top,
+.tooltip-arrow.arrow-left-bottom {
 	margin-top: -12px;
 }
-.tooltip-arrow-border.arrowright,
-.tooltip-arrow-border.arrowleft {
+.tooltip-arrow-border.arrow-right,
+.tooltip-arrow-border.arrow-right-top,
+.tooltip-arrow-border.arrow-right-bottom,
+.tooltip-arrow-border.arrow-left,
+.tooltip-arrow-border.arrow-left-top,
+.tooltip-arrow-border.arrow-left-bottom {
 	margin-top: -15px;
 }
 
+
+
 /* ARROW UP */
-.tooltip-arrow.arrowup,
-.tooltip-arrow-border.arrowup {
+.tooltip-arrow.arrow-up,
+.tooltip-arrow.arrow-up-left,
+.tooltip-arrow.arrow-up-right,
+.tooltip-arrow-border.arrow-up,
+.tooltip-arrow-border.arrow-up-left,
+.tooltip-arrow-border.arrow-up-right {
   bottom: 100%;
 	left: 50%;
 }
-.tooltip-arrow.arrowup {
-  border-bottom-color:white;
+.tooltip-arrow.arrow-up,
+.tooltip-arrow.arrow-up-left,
+.tooltip-arrow.arrow-up-right {
+  border-bottom-color: white;
 }
-.tooltip-arrow-border.arrowup {
+.tooltip-arrow-border.arrow-up,
+.tooltip-arrow-border.arrow-up-left,
+.tooltip-arrow-border.arrow-up-right {
   border-bottom-color: red;
 }
 
+
+
 /* ARROW DOWN */
-.tooltip-arrow.arrowdown,
-.tooltip-arrow-border.arrowdown {
+.tooltip-arrow.arrow-down,
+.tooltip-arrow.arrow-down-left,
+.tooltip-arrow.arrow-down-right,
+.tooltip-arrow-border.arrow-down,
+.tooltip-arrow-border.arrow-down-left,
+.tooltip-arrow-border.arrow-down-right {
 	top: 100%;
 	left: 50%;
 }
-.tooltip-arrow.arrowdown {
+.tooltip-arrow.arrow-down,
+.tooltip-arrow.arrow-down-left,
+.tooltip-arrow.arrow-down-right {
   border-top-color: white;
 }
-.tooltip-arrow-border.arrowdown {
+.tooltip-arrow-border.arrow-down,
+.tooltip-arrow-border.arrow-down-left,
+.tooltip-arrow-border.arrow-down-right {
   border-top-color: red;
 }
 
+
+
 /* ARROW RIGHT */
-.tooltip-arrow.arrowright,
-.tooltip-arrow-border.arrowright {
+.tooltip-arrow.arrow-right,
+.tooltip-arrow.arrow-right-top,
+.tooltip-arrow.arrow-right-bottom,
+.tooltip-arrow-border.arrow-right,
+.tooltip-arrow-border.arrow-right-top,
+.tooltip-arrow-border.arrow-right-bottom {
 	left: 100%;
 	top: 50%;
 }
-.tooltip-arrow.arrowright {
+.tooltip-arrow.arrow-right,
+.tooltip-arrow.arrow-right-top,
+.tooltip-arrow.arrow-right-bottom {
   border-left-color: white;
 }
-.tooltip-arrow-border.arrowright {
+.tooltip-arrow-border.arrow-right,
+.tooltip-arrow-border.arrow-right-top,
+.tooltip-arrow-border.arrow-right-bottom {
   border-left-color: red;
 }
 
 /* ARROW LEFT */
-.tooltip-arrow.arrowleft,
-.tooltip-arrow-border.arrowleft {
+.tooltip-arrow.arrow-left,
+.tooltip-arrow.arrow-left-top,
+.tooltip-arrow.arrow-left-bottom,
+.tooltip-arrow-border.arrow-left,
+.tooltip-arrow-border.arrow-left-top,
+.tooltip-arrow-border.arrow-left-bottom {
 	right: 100%;
 	top: 50%;
 }
-.tooltip-arrow.arrowleft {
-	border-right-color: white;
+.tooltip-arrow.arrow-left,
+.tooltip-arrow.arrow-left-top,
+.tooltip-arrow.arrow-left-bottom {
+  border-right-color: white;
 }
-.tooltip-arrow-border.arrowleft {
-	border-right-color: red;
+.tooltip-arrow-border.arrow-left,
+.tooltip-arrow-border.arrow-left-top,
+.tooltip-arrow-border.arrow-left-bottom {
+  border-right-color: red;
 }

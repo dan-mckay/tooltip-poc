@@ -1,15 +1,8 @@
 import React from 'react'
 import { PropTypes } from 'prop-types'
 import Position from './Position.js'
-import * as positions from './constants.js'
+import positions, { arrowClasses } from './constants.js'
 import './Tooltip2.css'
-
-const arrowStyle = {
-  [positions.TOP]: 'arrowdown',
-  [positions.BOTTOM]: 'arrowup',
-  [positions.LEFT]: 'arrowright',
-  [positions.RIGHT]: 'arrowleft'
-}
 
 // Presentation component
 const Tooltip = props => {
@@ -27,9 +20,9 @@ const Tooltip = props => {
 const TooltipArrow = props => {
   return (
     <div>
-      <div className={`tooltip-arrow-border ${arrowStyle[props.position]}`} />
+      <div className={`tooltip-arrow-border ${arrowClasses[props.position]}`} />
         {props.children}
-      <div className={`tooltip-arrow ${arrowStyle[props.position]}`} />
+      <div className={`tooltip-arrow ${arrowClasses[props.position]}`} />
     </div>
   )
 }
